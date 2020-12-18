@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            slick: 'Grindnu_Media/js/slick.min',
+            lightslider: 'Grindnu_Media/js/lightslider.min',
             fancybox: 'Grindnu_Media/js/jquery.fancybox.min'
         }
     }
