@@ -1,5 +1,5 @@
 <div class="gallery">
-    <ul id="lightSlider">
+    <ul id="lightSlider" style="padding-left: 25px;">
         <?php
     $galleryImages = $block->getGalleryImages();
 
@@ -10,8 +10,12 @@
         <li data-thumb="<?php echo $smallImageUrl; ?>">
             <a href="<?php echo $largeImageUrl; ?>"
                 data-fancybox="group">
-                <img src="<?php echo $imageUrl; ?>" width="280"
-                    height="370" />
+                <img <?php
+                // data-src
+                // as https://stackoverflow.com/questions/57674943/how-do-i-lazy-load-images-in-jquery-lightslider
+                ?>
+                src="<?php echo $imageUrl; ?>" width="370"
+                />
             </a>
         </li>
         <?php
@@ -20,13 +24,23 @@
     </ul>
 </div>
 <script>
-    require(['jquery', 'lightslider', 'fancybox', 'domReady!'], function($, lightSlider) {
-        $('#lightSlider').lightSlider({
-            gallery: true,
-            item: 1,
-            loop: true,
-            slideMargin: 0,
-            thumbItem: 6
+    require(
+        [
+            'jquery',
+            'lightSlider',
+            'lightGallery',
+            'lightGalleryVideo',
+            'domReady!'
+        ],
+        function($, lightSlider,
+            lightGallery) {
+            $('#lightSlider').lightSlider({
+                gallery: true,
+                item: 1,
+                loop: true,
+                slideMargin: 0,
+                thumbItem: 6
+            });
+            $('#lightSlider').lightGallery({});
         });
-    });
 </script>

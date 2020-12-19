@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="Grindnu_Media::css/lightslider.min.css" />
-        <css src="Grindnu_Media::css/jquery.fancybox.min.css" />
+        <css src="Grindnu_Media::css/lightgallery.min.css" />
     </head>
     <body>
         <referenceBlock name="product.info.media.image">
