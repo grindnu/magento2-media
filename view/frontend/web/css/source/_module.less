@@ -26,11 +26,11 @@
   li.lslide[data-thumb-class="video"] {
     position: relative;
 
-    :after {
+    &:after {
       content: "\e96a";
       position: absolute;
-      top: calc((100% - 25px) / 2);
-      left: calc((100% - 35px) / 2);
+      top: calc((100% - 35px) / 2);
+      left: calc((100% - 25px) / 2);
       font-family: "mbicon" !important;
       color: #fff;
       font-size: 26px;
@@ -38,11 +38,9 @@
     }
   }
 
-  li.lslide[data-thumb-class="video"] {
-    :after {
-      top: calc((100% - 137px) / 2);
-      left: calc((100% - 100px) / 2);
-      font-size: 100px;
-    }
+  li.lslide[data-thumb-class="video"]:after {
+    top: calc((100% - 137px) / 2);
+    left: calc((100% - 100px) / 2);
+    font-size: 100px;
   }
 }
