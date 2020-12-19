@@ -8,20 +8,6 @@
     list-style: none;
   }
 
-  .lightSlider li.video {
-    position: relative;
-
-    :after {
-      color: #fff;
-      content: "\e96a";
-      font-family: "mbicon" !important;
-      font-size: 100px;
-      left: 140px;
-      position: absolute;
-      top: 70px;
-    }
-  }
-
   li.video,
   li.lslide[data-thumb-class="video"] {
     position: relative;
@@ -31,6 +17,7 @@
       content: "\e96a";
       font-family: "mbicon" !important;
       font-size: 26px;
+      font-weight: bold;
       left: 18px;
       position: absolute;
       text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
@@ -39,8 +26,8 @@
   }
 
   li.lslide[data-thumb-class="video"]:after {
-    left: calc((100% - 100px) / 2);
     font-size: 100px;
-    top: calc((100% - 137px) / 2);
+    left: 140px;
+    top: 70px;
   }
 }
