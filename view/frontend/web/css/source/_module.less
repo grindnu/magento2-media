@@ -12,13 +12,13 @@
     position: relative;
 
     :after {
+      color: #fff;
       content: "\e96a";
+      font-family: "mbicon" !important;
+      font-size: 100px;
+      left: calc((100% - 100px) / 2);
       position: absolute;
       top: calc((100% - 137px) / 2);
-      left: calc((100% - 100px) / 2);
-      font-family: "mbicon" !important;
-      color: #fff;
-      font-size: 100px;
     }
   }
 
@@ -27,20 +27,20 @@
     position: relative;
 
     &:after {
-      content: "\e96a";
-      position: absolute;
-      top: calc((100% - 35px) / 2);
-      left: calc((100% - 25px) / 2);
-      font-family: "mbicon" !important;
       color: #fff;
+      content: "\e96a";
+      font-family: "mbicon" !important;
       font-size: 26px;
+      left: calc((100% - 25px) / 2);
+      position: absolute;
       text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      top: calc((100% - 35px) / 2);
     }
   }
 
   li.lslide[data-thumb-class="video"]:after {
-    top: calc((100% - 137px) / 2);
     left: calc((100% - 100px) / 2);
     font-size: 100px;
+    top: calc((100% - 137px) / 2);
   }
 }
