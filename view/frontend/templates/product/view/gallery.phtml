@@ -1,4 +1,4 @@
-<div class="gallery">
+<div class="gallery media-gallery">
     <ul id="lightSlider">
         <?php
     $galleryImages = $block->getGalleryImages();
@@ -19,9 +19,9 @@
                 // data-src
                 // as https://stackoverflow.com/questions/57674943/how-do-i-lazy-load-images-in-jquery-lightslider
                 ?>
-            data-src="<?php echo $imageUrl; ?>" src="data:,"
+            data-src="<?php echo $imageUrl; ?>"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII="
             alt="<?php echo $galleryImage->getLabel(); ?>"
-            width="370"
             />
         </li>
         <?php
@@ -57,7 +57,9 @@
                             controls: 0
                         },
                         onSliderLoad: function(el) {
-                            el.lightGallery({});
+                            el.lightGallery({
+                                download: false
+                            });
 
                             var showActiveSlides = function(entries) {
                                 entries.forEach(function(entry) {
