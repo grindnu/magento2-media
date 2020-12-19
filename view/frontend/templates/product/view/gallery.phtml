@@ -35,17 +35,21 @@
             'jquery',
             'lightSlider',
             'lightGallery',
-            'lightGalleryVideo',
             'domReady!'
         ],
-        function($, lightSlider,
-            lightGallery) {
-            $('#lightSlider').lightSlider({
-                gallery: true,
-                item: 1,
-                loop: true,
-                slideMargin: 0,
-                thumbItem: 6
-            });
+        function($) {
+            require(
+                [
+                    'lightGalleryVideo'
+                ],
+                function() {
+                    $('#lightSlider').lightSlider({
+                        gallery: true,
+                        item: 1,
+                        loop: true,
+                        slideMargin: 0,
+                        thumbItem: 6
+                    });
+                });
         });
 </script>
