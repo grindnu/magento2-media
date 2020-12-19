@@ -1,28 +1,28 @@
 <div class="gallery">
-    <ul id="lightSlider" style="padding-left: 25px;">
+    <ul id="lightSlider">
         <?php
     $galleryImages = $block->getGalleryImages();
 
     foreach ($galleryImages as $galleryImage) {
-        $largeImageUrl = $galleryImage->getLargeImageUrl();
         $imageUrl = $galleryImage->getMediumImageUrl();
-        $smallImageUrl = $galleryImage->getSmallImageUrl(); ?>
-        <li data-thumb="<?php echo $smallImageUrl; ?>">
-            <?php if ($galleryImage->getMediaType === 'external-video') { ?>
-            <a href="https://www.youtube.com/watch?v=zcDoz_oN3z0">
-                <img src="<?php echo $imageUrl; ?>" width="370" />
-            </a>
-            <?php } else { ?>
-            <a href="<?php echo $largeImageUrl; ?>"
-                data-fancybox="group">
-                <img <?php
+        $smallImageUrl = $galleryImage->getSmallImageUrl();
+
+        if ($galleryImage->getMediaType() === 'external-video') {
+            $largeImageUrl = $galleryImage->getVideoUrl();
+        } else {
+            $largeImageUrl = $galleryImage->getLargeImageUrl();
+        } ?>
+        <li data-thumb="<?php echo $smallImageUrl; ?>"
+            data-sub-html="<?php echo $galleryImage->getLabel(); ?>"
+            data-src="<?php echo $largeImageUrl; ?>">
+            <img <?php
                 // data-src
                 // as https://stackoverflow.com/questions/57674943/how-do-i-lazy-load-images-in-jquery-lightslider
                 ?>
-                src="<?php echo $imageUrl; ?>" width="370"
-                />
-            </a>
-            <?php } ?>
+            data-src="<?php echo $imageUrl; ?>" src="data:,"
+            alt="<?php echo $galleryImage->getLabel(); ?>"
+            width="370"
+            />
         </li>
         <?php
     }
@@ -37,10 +37,10 @@
             'lightGallery',
             'domReady!'
         ],
-        function($) {
-            require(
-                [
-                    'lightGalleryVideo'
+        function($, a, b) {
+            require([
+                    'lightGalleryVideo',
+                    'lightGalleryZoom'
                 ],
                 function() {
                     $('#lightSlider').lightSlider({
@@ -48,8 +48,39 @@
                         item: 1,
                         loop: true,
                         slideMargin: 0,
-                        thumbItem: 6
+                        thumbItem: 6,
+                        zoom: true,
+                        actualSize: true,
+                        youtubePlayerParams: {
+                            modestbranding: 1,
+                            showinfo: 0,
+                            controls: 0
+                        },
+                        onSliderLoad: function(el) {
+                            el.lightGallery({});
+
+                            var showActiveSlides = function(entries) {
+                                entries.forEach(function(entry) {
+                                    if (entry.isIntersecting) {
+                                        entry.target.src = entry.target.dataset.src;
+                                        observer.unobserve(entry.target);
+                                    }
+                                });
+                            };
+
+                            var imageWidth = el.find("li").outerWidth() + "px";
+
+                            var observer = new window.IntersectionObserver(showActiveSlides, {
+                                root: el.parent()[0],
+                                rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+                            });
+
+                            el.find("li img").each(function() {
+                                observer.observe(this);
+                            });
+                        }
                     });
-                });
+                }
+            );
         });
 </script>
