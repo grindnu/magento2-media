@@ -5,12 +5,13 @@
 
     foreach ($galleryImages as $galleryImage) {
         $largeImageUrl = $galleryImage->getLargeImageUrl();
-        $imageUrl = $galleryImage->getImageUrl();
+        $imageUrl = $galleryImage->getMediumImageUrl();
         $smallImageUrl = $galleryImage->getSmallImageUrl(); ?>
         <li data-thumb="<?php echo $smallImageUrl; ?>">
             <a href="<?php echo $largeImageUrl; ?>"
                 data-fancybox="group">
-                <img src="<?php echo $imageUrl; ?>" />
+                <img src="<?php echo $imageUrl; ?>" width="280"
+                    height="370" />
             </a>
         </li>
         <?php
