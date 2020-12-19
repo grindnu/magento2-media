@@ -1,10 +1,46 @@
 .gallery.media-gallery {
-  max-height: 600px;
+  max-height: 800px;
 
   ul,
   li {
     background: #fff;
     height: 100%;
     list-style: none;
+  }
+
+  .lightSlider li.video {
+    position: relative;
+
+    :after {
+      content: "\e96a";
+      position: absolute;
+      top: calc((100% - 137px) / 2);
+      left: calc((100% - 100px) / 2);
+      font-family: "mbicon" !important;
+      color: #fff;
+      font-size: 100px;
+    }
+  }
+
+  li.video {
+    position: relative;
+
+    :after {
+      content: "\e96a";
+      position: absolute;
+      top: calc((100% - 40px) / 2);
+      left: calc((100% - 40px) / 2);
+      font-family: "mbicon" !important;
+      color: #fff;
+      font-size: 40px;
+    }
+  }
+
+  .lightSlider li.video {
+    :after {
+      top: calc((100% - 137px) / 2);
+      left: calc((100% - 100px) / 2);
+      font-size: 100px;
+    }
   }
 }

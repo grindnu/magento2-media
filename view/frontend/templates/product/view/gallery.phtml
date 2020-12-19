@@ -8,11 +8,14 @@
         $smallImageUrl = $galleryImage->getSmallImageUrl();
 
         if ($galleryImage->getMediaType() === 'external-video') {
+            $thumbnailClass = 'video';
             $largeImageUrl = $galleryImage->getVideoUrl();
         } else {
+            $thumbnailClass = 'image';
             $largeImageUrl = $galleryImage->getLargeImageUrl();
         } ?>
         <li data-thumb="<?php echo $smallImageUrl; ?>"
+            data-thumb-class="<?php echo $thumbnailClass; ?>"
             data-sub-html="<?php echo $galleryImage->getLabel(); ?>"
             data-src="<?php echo $largeImageUrl; ?>">
             <img <?php
@@ -59,6 +62,7 @@
                         },
                         onSliderLoad: function(el) {
                             el.lightGallery({
+                                selector: '#lightSlider .lslide',
                                 download: false
                             });
 
