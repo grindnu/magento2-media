@@ -11,5 +11,6 @@
                 <argument name="template" xsi:type="string">Grindnu_Media::product/view/gallery.phtml</argument>
             </action>
         </referenceBlock>
+        <referenceBlock name="product.info.media.video" remove="true" />
     </body>
 </page>
