@@ -1,15 +1,14 @@
 .gallery.media-gallery {
   max-height: 800px;
 
-  ul,
-  li {
+  a {
     background: #fff;
+    display: block;
     height: 100%;
-    list-style: none;
   }
 
-  li.video,
-  li.lslide[data-thumb-class="video"] {
+  a.video,
+  a.lslide[data-thumb-class="video"] {
     position: relative;
 
     &:after {
@@ -25,7 +24,7 @@
     }
   }
 
-  li.lslide[data-thumb-class="video"]:after {
+  a.lslide[data-thumb-class="video"]:after {
     font-size: 100px;
     left: 140px;
     top: 70px;

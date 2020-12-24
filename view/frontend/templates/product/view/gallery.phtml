@@ -1,5 +1,5 @@
 <div class="gallery media-gallery">
-    <ul id="lightSlider">
+    <div id="lightSlider">
         <?php
     $galleryImages = $block->getGalleryImages();
 
@@ -14,10 +14,10 @@
             $thumbnailClass = 'image';
             $largeImageUrl = $galleryImage->getLargeImageUrl();
         } ?>
-        <li data-thumb="<?php echo $smallImageUrl; ?>"
+        <a href="<?php echo $largeImageUrl; ?>"
+            data-thumb="<?php echo $smallImageUrl; ?>"
             data-thumb-class="<?php echo $thumbnailClass; ?>"
-            data-sub-html="<?php echo $galleryImage->getLabel(); ?>"
-            data-src="<?php echo $largeImageUrl; ?>">
+            data-sub-html="<?php echo $galleryImage->getLabel(); ?>">
             <img <?php
                 // data-src
                 // as https://stackoverflow.com/questions/57674943/how-do-i-lazy-load-images-in-jquery-lightslider
@@ -27,11 +27,11 @@
             alt="<?php echo $galleryImage->getLabel(); ?>"
             width="370" <?php // taken from config!?>
             />
-        </li>
+        </a>
         <?php
     }
     ?>
-    </ul>
+    </div>
 </div>
 <script>
     require(
@@ -75,14 +75,14 @@
                                 });
                             };
 
-                            var imageWidth = el.find("li").outerWidth() + "px";
+                            var imageWidth = el.find("a").outerWidth() + "px";
 
                             var observer = new window.IntersectionObserver(showActiveSlides, {
                                 root: el.parent()[0],
                                 rootMargin: "0px " + imageWidth + " 0px " + imageWidth
                             });
 
-                            el.find("li img").each(function() {
+                            el.find("a img").each(function() {
                                 observer.observe(this);
                             });
                         }
