@@ -8,10 +8,14 @@
       background: #fff;
       display: block;
       height: 100%;
+
+      img {
+        width: 375px; /* Default */
+      }
     }
   }
 
-  a.video,
+  li.video,
   a.lslide[data-thumb-class="video"] {
     position: relative;
 
@@ -21,16 +25,16 @@
       font-family: "mbicon" !important;
       font-size: 26px;
       font-weight: bold;
-      left: 18px;
+      left: calc((100% / 2) - 13px);
       position: absolute;
       text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-      top: 21px;
+      top: calc((100% / 2) - 17px);
     }
   }
 
   a.lslide[data-thumb-class="video"]:after {
     font-size: 100px;
-    left: 140px;
-    top: 70px;
+    left: calc((100% / 2) - 50px);
+    top: calc((100% / 2) - 69px);
   }
 }
