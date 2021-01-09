@@ -18,12 +18,8 @@
             data-thumb="<?php echo $smallImageUrl; ?>"
             data-thumb-class="<?php echo $thumbnailClass; ?>"
             data-sub-html="<?php echo $galleryImage->getLabel(); ?>">
-            <img <?php
-                // data-src
-                // as https://stackoverflow.com/questions/57674943/how-do-i-lazy-load-images-in-jquery-lightslider
-                ?>
-            data-src="<?php echo $imageUrl; ?>"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            <img 
+            src="<?php echo $imageUrl; ?>"
             alt="<?php echo $galleryImage->getLabel(); ?>"
             />
         </a>
@@ -47,7 +43,7 @@
                 ],
                 function() {
                     $('#lightSlider').lightSlider({
-                        autoWidth: true,
+                        autoWidth: false,
                         gallery: true,
                         item: 1,
                         loop: true,
@@ -61,29 +57,11 @@
                             controls: 0
                         },
                         onSliderLoad: function(el) {
+                            $('#lightSlider').css('visibility', 'visible');
+
                             el.lightGallery({
                                 selector: '#lightSlider .lslide',
                                 download: false
-                            });
-
-                            var showActiveSlides = function(entries) {
-                                entries.forEach(function(entry) {
-                                    if (entry.isIntersecting) {
-                                        entry.target.src = entry.target.dataset.src;
-                                        observer.unobserve(entry.target);
-                                    }
-                                });
-                            };
-
-                            var imageWidth = el.find("a").outerWidth() + "px";
-
-                            var observer = new window.IntersectionObserver(showActiveSlides, {
-                                root: el.parent()[0],
-                                rootMargin: "0px " + imageWidth + " 0px " + imageWidth
-                            });
-
-                            el.find("a img").each(function() {
-                                observer.observe(this);
                             });
                         }
                     });
