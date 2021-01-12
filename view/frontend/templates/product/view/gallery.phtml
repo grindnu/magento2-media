@@ -18,10 +18,8 @@
             data-thumb="<?php echo $smallImageUrl; ?>"
             data-thumb-class="<?php echo $thumbnailClass; ?>"
             data-sub-html="<?php echo $galleryImage->getLabel(); ?>">
-            <img 
-            src="<?php echo $imageUrl; ?>"
-            alt="<?php echo $galleryImage->getLabel(); ?>"
-            />
+            <img src="<?php echo $imageUrl; ?>"
+                alt="<?php echo $galleryImage->getLabel(); ?>" />
         </a>
         <?php
     }
@@ -42,20 +40,21 @@
                     'Grindnu_Media/js/lg-zoom'
                 ],
                 function() {
-                    $('#lightSlider').lightSlider({
+                    window.mediaGallery = $('#lightSlider').lightSlider({
+                        auto: false,
+                        actualSize: true,
                         autoWidth: false,
                         gallery: true,
                         item: 1,
                         loop: true,
                         slideMargin: 0,
                         thumbItem: 6,
-                        zoom: true,
-                        actualSize: true,
                         youtubePlayerParams: {
                             modestbranding: 1,
                             showinfo: 0,
                             controls: 0
                         },
+                        zoom: true,
                         onSliderLoad: function(el) {
                             $('#lightSlider').css('visibility', 'visible');
 
