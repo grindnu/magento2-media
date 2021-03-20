@@ -1,2 +1,2 @@
 # magento2-media
-Replace fotorama
+Small module to replace the standard Fotorama with a combination of Lightslider and LightGallery.
