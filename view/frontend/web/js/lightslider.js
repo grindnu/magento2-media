@@ -366,7 +366,7 @@ define([
                                 // pagers += '<li class="' + thumbClass + '" style="width:100%;' + property + ':' + thumbWidth + 'px;' + gutter + ':' + settings.thumbMargin + 'px"><a href="#"><img src="' + thumb + '" /></a></li>';
 
                                 // @TODO. Amagard => Move to extend of lightSlider.
-                                pagers += '<li class="' + thumbClass + '" style="width:100%;' + property + ':' + thumbWidth + 'px;' + gutter + ':' + settings.thumbMargin + 'px"><a href="#"><img src="' + thumb + '" loading="lazy" /></a></li>';
+                                pagers += '<li class="' + thumbClass + '" style="width:100%;' + property + ':' + thumbWidth + 'px;' + gutter + ':' + settings.thumbMargin + 'px"><a href="#"><img height="' + settings.thumbHeight + '" width="' + settings.thumbWidth + '" src="' + thumb + '" loading="lazy" /></a></li>';
                             } else {
                                 pagers += '<li><a href="#">' + (i + 1) + '</a></li>';
                             }

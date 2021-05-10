@@ -19,6 +19,8 @@
             data-thumb-class="<?php echo $thumbnailClass; ?>"
             data-sub-html="<?php echo $galleryImage->getLabel(); ?>">
             <img src="<?php echo $imageUrl; ?>"
+                width="<?php echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>"
+                height="<?php echo $block->getImageAttribute('product_page_image_medium', 'height'); ?>"
                 alt="<?php echo $galleryImage->getLabel(); ?>" />
         </a>
         <?php
@@ -49,6 +51,8 @@
                         loop: true,
                         slideMargin: 0,
                         thumbItem: 6,
+                        thumbWidth: <?php echo $block->getImageAttribute('product_page_image_small', 'width'); ?> ,
+                        thumbHeight: <?php echo $block->getImageAttribute('product_page_image_small', 'height'); ?> ,
                         youtubePlayerParams: {
                             modestbranding: 1,
                             showinfo: 0,
