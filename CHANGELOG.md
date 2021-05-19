@@ -12,14 +12,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 **Added**
 
-* Override thumbnail creation to include `loading="lazy"`. Proper extend solution still required.
-* Include `width` and `height` in all media gallery images and thumbnails.
-
 **Changed**
 
 **Fixed**
 
 **Removed**
+
+
+## [1.0.1] - 2021-05-19
+
+**Added**
+
+* Override thumbnail creation to include `loading="lazy"`. Proper extend solution still required.
+* Include `width` and `height` in all media gallery images and thumbnails.
 
 
 ## [1.0.0] - 2021-05-05
