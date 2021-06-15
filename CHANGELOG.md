@@ -1,6 +1,6 @@
 ## grindnu/magento2-media :: CHANGELOG
 
-`grindnu/magento2-media` is a module that includes various kinds of functionality specifically targeted to Media Gallery.
+`grindnu/magento2-media` is a module that includes various kinds of functionality specifically targeted to Media Gallery on the product page. It replaces the standard fotorama gallery with a combination of light-slider and light-gallery.
 
 All notable changes to this project will be documented in this file.
 
@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 **Added**
+
+* Added a bit more standardization to allow cross-site usage.
 
 **Changed**
 

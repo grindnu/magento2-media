@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
-<page layout="1column"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
     <head>
         <css src="Grindnu_Media::css/lightslider.min.css" />
         <css src="Grindnu_Media::css/lightgallery.min.css" />
     </head>
+
     <body>
         <referenceBlock name="product.info.media.image">
             <action method="setTemplate">
@@ -12,5 +14,9 @@
             </action>
         </referenceBlock>
         <referenceBlock name="product.info.media.video" remove="true" />
+        <referenceContainer name="skip_gallery_after.target" remove="true" />
+        <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
+        <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
+        <referenceContainer name="skip_gallery_before.target" remove="true" />
     </body>
 </page>

@@ -1,10 +1,10 @@
 var config = {
     map: {
         '*': {
-            'Grindnu_Media/js/lightslider': 'Grindnu_Media/js/lightslider',
-            'Grindnu_Media/js/lightgallery': 'Grindnu_Media/js/lightgallery',
-            'Grindnu_Media/js/lg-video': 'Grindnu_Media/js/lg-video',
-            'Grindnu_Media/js/lg-zoom': 'Grindnu_Media/js/lg-zoom'
+            'lightSlider': 'Grindnu_Media/js/lightslider',
+            'lightGallery': 'Grindnu_Media/js/lightgallery',
+            'lightSliderVideo': 'Grindnu_Media/js/lg-video',
+            'lightSliderZoom': 'Grindnu_Media/js/lg-zoom'
         }
     }
 }

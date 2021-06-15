@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <grindnu_media>
+            <settings>
+                <actual_size>1</actual_size>
+                <allow_download>0</allow_download>
+                <allow_gallery>1</allow_gallery>
+                <allow_loop>1</allow_loop>
+                <allow_zoom>1</allow_zoom>
+                <auto_start>0</auto_start>
+                <auto_width>0</auto_width>
+                <number_of_thumbnails>6</number_of_thumbnails>
+                <slide_margin>0</slide_margin>
+                <start_position>1</start_position>
+                <youtube_modest_branding>1</youtube_modest_branding>
+                <youtube_show_info>0</youtube_show_info>
+                <youtube_controls>0</youtube_controls>
+            </settings>
+        </grindnu_media>
+    </default>
+</config>
