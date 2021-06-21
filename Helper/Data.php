@@ -19,4 +19,42 @@ class Data extends AbstractHelper
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    /**
+     * @return bool
+     */
+    public function allowImages()
+    {
+        return !$this->excludeImages();
+    }
+
+    /**
+     * @return bool
+     */
+    protected function excludeImages()
+    {
+        return (bool) $this->scopeConfig->getValue(
+            'grindnu_media/settings/exclude_images',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * @return bool
+     */
+    public function allowVideos()
+    {
+        return !$this->excludeVideos();
+    }
+
+    /**
+     * @return bool
+     */
+    protected function excludeVideos()
+    {
+        return (bool) $this->scopeConfig->getValue(
+            'grindnu_media/settings/exclude_videos',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 }

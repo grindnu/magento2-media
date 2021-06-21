@@ -11,6 +11,8 @@
                 <allow_zoom>1</allow_zoom>
                 <auto_start>0</auto_start>
                 <auto_width>0</auto_width>
+                <exclude_images>0</exclude_images>
+                <exclude_videos>0</exclude_videos>
                 <number_of_thumbnails>6</number_of_thumbnails>
                 <slide_margin>0</slide_margin>
                 <start_position>1</start_position>

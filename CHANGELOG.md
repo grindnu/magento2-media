@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 **Added**
 
 * Added a bit more standardization to allow cross-site usage.
+* Support hiding videos/images if requested.
 
 **Changed**
 
