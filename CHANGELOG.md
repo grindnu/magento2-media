@@ -12,14 +12,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 **Added**
 
-* Added a bit more standardization to allow cross-site usage.
-* Support hiding videos/images if requested.
-
 **Changed**
 
 **Fixed**
 
 **Removed**
+
+
+## [1.0.4] - 2021-06-22
+
+**Fixed**
+
+* Boolean based settings were not rendered correctly as JSON settings.
+
+
+## [1.0.3] - 2021-06-21
+
+**Changed**
+
+* Added a bit more standardization to allow cross-site usage.
+* Support hiding videos/images if requested.
 
 
 ## [1.0.2] - 2021-06-09
