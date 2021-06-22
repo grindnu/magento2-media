@@ -50,12 +50,12 @@ $dataHelper = $this->helper(Data::class);
                 ],
                 function() {
                     window.mediaGallery = $('#lightSlider').lightSlider({
-                        auto: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/auto_start'); ?> ,
-                        actualSize: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/actual_size'); ?> ,
-                        autoWidth: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/auto_width'); ?> ,
-                        gallery: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/allow_gallery'); ?> ,
+                        auto: <?php echo $dataHelper->getSettingsFlag('auto_start'); ?> ,
+                        actualSize: <?php echo $dataHelper->getSettingsFlag('actual_size'); ?> ,
+                        autoWidth: <?php echo $dataHelper->getSettingsFlag('auto_width'); ?> ,
+                        gallery: <?php echo $dataHelper->getSettingsFlag('allow_gallery'); ?> ,
                         item: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/start_position'); ?> ,
-                        loop: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/allow_loop'); ?> ,
+                        loop: <?php echo $dataHelper->getSettingsFlag('allow_loop'); ?> ,
                         slideMargin: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/slide_margin'); ?> ,
                         thumbItem: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/number_of_thumbnails'); ?> ,
                         thumbWidth: <?php echo $block->getImageAttribute('product_page_image_small', 'width'); ?> ,
@@ -65,13 +65,14 @@ $dataHelper = $this->helper(Data::class);
                             showinfo: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/youtube_show_info'); ?> ,
                             controls: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/youtube_controls'); ?>
                         },
-                        zoom: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/allow_zoom'); ?> ,
+                        zoom: <?php echo $dataHelper->getSettingsFlag('allow_zoom'); ?> ,
                         onSliderLoad: function(el) {
+                            console.info('load?');
                             $('#lightSlider').css('visibility', 'visible');
 
                             el.lightGallery({
                                 selector: '#lightSlider .lslide',
-                                download: <?php echo (bool) $dataHelper->getConfig('grindnu_media/settings/allow_download'); ?> ,
+                                download: <?php echo $dataHelper->getSettingsFlag('allow_download'); ?> ,
                             });
                         }
                     });

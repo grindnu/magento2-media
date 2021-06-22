@@ -57,4 +57,18 @@ class Data extends AbstractHelper
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    /**
+     * @param string $setting
+     *
+     * @return string
+     */
+    public function getSettingsFlag(string $setting)
+    {
+        $value = (bool) $this->getConfig(
+            sprintf('grindnu_media/settings/%s', $setting)
+        );
+
+        return $value ? 'true' : 'false';
+    }
 }
