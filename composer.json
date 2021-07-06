@@ -11,10 +11,7 @@
         "sort-packages": true
     },
     "description": "Small module to replace the standard Fotorama with a combination of Lightslider and LightGallery",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
+    "license": "MIT",
     "name": "grindnu/magento2-media",
     "require": {
         "php": ">=7.1",
