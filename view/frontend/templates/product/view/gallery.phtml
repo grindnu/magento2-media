@@ -67,7 +67,6 @@ $dataHelper = $this->helper(Data::class);
                         },
                         zoom: <?php echo $dataHelper->getSettingsFlag('allow_zoom'); ?> ,
                         onSliderLoad: function(el) {
-                            console.info('load?');
                             $('#lightSlider').css('visibility', 'visible');
 
                             el.lightGallery({
