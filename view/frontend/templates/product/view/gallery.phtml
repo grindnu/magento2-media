@@ -9,6 +9,7 @@ $dataHelper = $this->helper(Data::class);
     <div id="lightSlider">
         <?php
     $galleryImages = $block->getGalleryImages();
+    $isGalleryEnabled = (int) $dataHelper->getConfig('grindnu_media/settings/allow_gallery');
 
     foreach ($galleryImages as $galleryImage) {
         $imageUrl = $galleryImage->getMediumImageUrl();
@@ -21,15 +22,19 @@ $dataHelper = $this->helper(Data::class);
             $thumbnailClass = 'image';
             $largeImageUrl = $galleryImage->getLargeImageUrl();
         } ?>
+        <?php if ($isGalleryEnabled) { ?>
         <a href="<?php echo $largeImageUrl; ?>"
             data-thumb="<?php echo $smallImageUrl; ?>"
             data-thumb-class="<?php echo $thumbnailClass; ?>"
             data-sub-html="<?php echo $galleryImage->getLabel(); ?>">
+            <?php } ?>
             <img src="<?php echo $imageUrl; ?>"
                 width="<?php echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>"
                 height="<?php echo $block->getImageAttribute('product_page_image_medium', 'height'); ?>"
                 alt="<?php echo $galleryImage->getLabel(); ?>" />
+            <?php if ($isGalleryEnabled) { ?>
         </a>
+        <?php } ?>
         <?php
     }
     ?>
@@ -53,7 +58,7 @@ $dataHelper = $this->helper(Data::class);
                         auto: <?php echo $dataHelper->getSettingsFlag('auto_start'); ?> ,
                         actualSize: <?php echo $dataHelper->getSettingsFlag('actual_size'); ?> ,
                         autoWidth: <?php echo $dataHelper->getSettingsFlag('auto_width'); ?> ,
-                        gallery: <?php echo $dataHelper->getSettingsFlag('allow_gallery'); ?> ,
+                        gallery: <?php echo $isGalleryEnabled ? 'true' : 'false'; ?> ,
                         item: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/start_position'); ?> ,
                         loop: <?php echo $dataHelper->getSettingsFlag('allow_loop'); ?> ,
                         slideMargin: <?php echo (int) $dataHelper->getConfig('grindnu_media/settings/slide_margin'); ?> ,
@@ -69,10 +74,12 @@ $dataHelper = $this->helper(Data::class);
                         onSliderLoad: function(el) {
                             $('#lightSlider').css('visibility', 'visible');
 
+                            <?php if ($isGalleryEnabled) { ?>
                             el.lightGallery({
                                 selector: '#lightSlider .lslide',
                                 download: <?php echo $dataHelper->getSettingsFlag('allow_download'); ?> ,
                             });
+                            <?php } ?>
                         }
                     });
                 }
