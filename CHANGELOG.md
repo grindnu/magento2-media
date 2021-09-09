@@ -16,9 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 **Fixed**
 
-* Disabling gallery did not remove the image event listeners completely.
-
-**Removed**
+**Removed**1631030400
 
 
 ## [1.0.6] - 2021-09-07
