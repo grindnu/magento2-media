@@ -41,9 +41,11 @@ class FilterGalleryItemsPlugin
             $allowedMediaTypes[] = 'external-video';
         }
 
-        $result->addFilter('media_type', [
-            'in' => $allowedMediaTypes,
-        ]);
+        foreach ($result as $key => $item) {
+            if (!in_array($item->getMediaType(), $allowedMediaTypes)) {
+                $result->removeItemByKey($key);
+            }
+        }
 
         return $result;
     }
